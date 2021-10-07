@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/responsivesness.css" />
+    <title>Homely</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.png" alt="" />
+        </div>
+        <nav class="header-nav">
+          <a href="index">home</a>
+          <a href="about">about</a>
+          <a href="explore">explore</a>
+          <a href="contact">contact</a>
+          <a href="sign-in" class="btn">sign in</a>
+        </nav>
+
+        <div id="dropdown">
+          <button id="dropdown-btn">
+            <img
+              src="images/icon-hamburger.svg"
+              id="open-dropdown"
+              class="visible"
+            />
+            <img src="images/icon-close.svg" alt="" id="close-dropdown" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="background" id="intro">
+        <div class="backdrop">
+          <div class="dropdown-menu">
+            <nav class="header-nav">
+              <a href="index">home</a>
+              <a href="about">about</a>
+              <a href="explore">explore</a>
+              <a href="contact">contact</a>
+              <a href="sign-in" class="btn">sign in</a>
+            </nav>
+          </div>
+        </div>
+        <div class="container intro">
+          <div class="left">
+            <h1>Homely</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              porro, nulla quibusdam inventore ratione repellat quis fugiat,
+              voluptate mollitia
+            </p>
+
+            <% users.forEach(function(user) { %>
+            <p><%= user.name%></p>
+            <% })%>
+            <form action="">
+              <div class="search-input-container">
+                <img src="images/search.png" alt="" />
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Search by name or location"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="right">
+            <img src="images/bedroom.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <section id="services-section">
+        <h2>Our services</h2>
+        <div class="container" id="services">
+          <div class="service">
+            <img src="images/thumbs-up.svg" alt="image here" />
+            <h3>Conducive environment</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              reiciendis pariatur illum perferendis.
+            </p>
+          </div>
+          <div class="service">
+            <img src="images/badge.svg" alt="image here" />
+            <h3>Top Notch Facilities</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              reiciendis pariatur illum perferendis.
+            </p>
+          </div>
+          <div class="service">
+            <img src="images/customer.svg" alt="image here" />
+            <h3>5-star Customer Service</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              reiciendis pariatur illum perferendis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="explore-section">
+        <h2>Explore hostels</h2>
+        <div class="container" id="explore-hostels">
+          <div class="hostel">
+            <img src="images/hostel.jpg" alt="image here" id="apartment" />
+            <div class="hostel-details">
+              <div class="hostel-name">
+                <h4>Lambo Phase 1</h4>
+                <span>150k/year</span>
+              </div>
+              <span>A room self-contain</span>
+              <div class="hostel-location">
+                <img src="images/location.svg" alt="" />
+                <span>Safari, Malete</span>
+              </div>
+              <a href="hostel" class="btn">View more</a>
+            </div>
+          </div>
+
+          <div class="hostel">
+            <img src="images/hostel.jpg" alt="image here" id="apartment" />
+            <div class="hostel-details">
+              <div class="hostel-name">
+                <h4>Lambo Phase 1</h4>
+                <span>150k/year</span>
+              </div>
+              <span>A room self-contain</span>
+              <div class="hostel-location">
+                <img src="images/location.svg" alt="" />
+                <span>Safari, Malete</span>
+              </div>
+              <a href="hostel" class="btn">View more</a>
+            </div>
+          </div>
+
+          <div class="hostel">
+            <img src="images/hostel.jpg" alt="image here" id="apartment" />
+            <div class="hostel-details">
+              <div class="hostel-name">
+                <h4>Lambo Phase 1</h4>
+                <span>150k/year</span>
+              </div>
+              <span>A room self-contain</span>
+              <div class="hostel-location">
+                <img src="images/location.svg" alt="" />
+                <span>Safari, Malete</span>
+              </div>
+              <a href="hostel" class="btn">View more</a>
+            </div>
+          </div>
+
+          <div class="hostel">
+            <img src="images/hostel.jpg" alt="image here" id="apartment" />
+            <div class="hostel-details">
+              <div class="hostel-name">
+                <h4>Lambo Phase 1</h4>
+                <span>150k/year</span>
+              </div>
+              <span>A room self-contain</span>
+              <div class="hostel-location">
+                <img src="images/location.svg" alt="" />
+                <span>Safari, Malete</span>
+              </div>
+              <a href="hostel" class="btn">View more</a>
+            </div>
+          </div>
+        </div>
+        <div id="more-hostels">
+          <span><a href="explore">View more</a></span>
+        </div>
+      </section>
+
+      <article>
+        <div class="container" id="article-wrapper">
+          <div class="article-image">
+            <img src="images/about.jpg" alt="" />
+          </div>
+          <div class="article">
+            <h1>Who are we?</h1>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Repudiandae dolor exercitationem possimus maiores ad nam autem
+              repellat nisi iure tempora?
+            </p>
+            <a href="about" class="btn">Learn more</a>
+          </div>
+        </div>
+      </article>
+
+      <section id="testimonial">
+        <h2>what students say about us</h2>
+        <div class="container" id="testimonies-wrapper">
+          <span>
+            <img src="images/arrow-previous.svg" alt="" />
+          </span>
+          <div class="testimonies">
+            <img src="images/testimonial.jpg" alt="" />
+            <div>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere
+                reprehenderit impedit ducimus ipsam. Ipsum iusto harum amet
+                voluptate quas neque?
+              </p>
+              <div>
+                <span>Olasubomi Blessing</span>
+                <span>200L, Accounting</span>
+              </div>
+            </div>
+          </div>
+          <span>
+            <img src="images/arrow-next.svg" alt="" />
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-logo">
+          <h1>logo</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni hic
+            repudiandae aspernatur, reiciendis adipisci odit repellat quam
+            accusantium non molestiae sed similique ipsum temporibus ipsam.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-nav_content">
+            <h1>company</h1>
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">explore</a>
+          </div>
+          <div class="footer-nav_content">
+            <h1>help</h1>
+            <a href="#">contact</a>
+          </div>
+          <div class="footer-nav_content">
+            <h1>other</h1>
+            <a href="#">login</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container socials-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="socials">
+          <span>Follow us: </span>
+          <span>
+            <img src="images/facebook-icon.png" alt="facebook-icon" />
+            <img src="images/twitter-icon.png" alt="facebook-icon" />
+            <img src="images/instagram-icon.png" alt="facebook-icon" />
+            <img src="images/linkedin-icon.png" alt="facebook-icon" />
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
