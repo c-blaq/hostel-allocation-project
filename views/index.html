@@ -14,13 +14,8 @@
         <div class="logo">
           <img src="images/logo.png" alt="" />
         </div>
-        <nav class="header-nav">
-          <a href="index">home</a>
-          <a href="about">about</a>
-          <a href="explore">explore</a>
-          <a href="contact">contact</a>
-          <a href="sign-in" class="btn">sign in</a>
-        </nav>
+
+        <%- include("partials/nav.ejs") -%>
 
         <div id="dropdown">
           <button id="dropdown-btn">
@@ -37,15 +32,7 @@
     <main>
       <div class="background" id="intro">
         <div class="backdrop">
-          <div class="dropdown-menu">
-            <nav class="header-nav">
-              <a href="index">home</a>
-              <a href="about">about</a>
-              <a href="explore">explore</a>
-              <a href="contact">contact</a>
-              <a href="sign-in" class="btn">sign in</a>
-            </nav>
-          </div>
+          <div class="dropdown-menu"><%- include("partials/nav.ejs") -%></div>
         </div>
         <div class="container intro">
           <div class="left">
@@ -56,16 +43,16 @@
               voluptate mollitia
             </p>
 
-            <% users.forEach(function(user) { %>
-            <p><%= user.name%></p>
-            <% })%>
-            <form action="">
+            <form action="/hostels/" method="GET">
               <div class="search-input-container">
-                <img src="images/search.png" alt="" />
+                <button>
+                  <img src="images/search.png" alt="" />
+                </button>
                 <input
                   type="text"
-                  name="location"
+                  name="q"
                   placeholder="Search by name or location"
+                  required
                 />
               </div>
             </form>
@@ -108,70 +95,27 @@
 
       <section id="explore-section">
         <h2>Explore hostels</h2>
+
         <div class="container" id="explore-hostels">
+          <% for( let i = 0; i < 4; i++) { %>
           <div class="hostel">
             <img src="images/hostel.jpg" alt="image here" id="apartment" />
             <div class="hostel-details">
               <div class="hostel-name">
-                <h4>Lambo Phase 1</h4>
-                <span>150k/year</span>
+                <h4><%- hostels[i].hostelName %></h4>
+                <span><%- hostels[i].price %>k/year</span>
               </div>
-              <span>A room self-contain</span>
+              <span><%- hostels[i].description %></span>
               <div class="hostel-location">
                 <img src="images/location.svg" alt="" />
-                <span>Safari, Malete</span>
+                <span><%- hostels[i].location %></span>
               </div>
-              <a href="hostel" class="btn">View more</a>
+              <a href="<%- `hostel/${hostels[i]._id}` %>" class="btn"
+                >View more</a
+              >
             </div>
           </div>
-
-          <div class="hostel">
-            <img src="images/hostel.jpg" alt="image here" id="apartment" />
-            <div class="hostel-details">
-              <div class="hostel-name">
-                <h4>Lambo Phase 1</h4>
-                <span>150k/year</span>
-              </div>
-              <span>A room self-contain</span>
-              <div class="hostel-location">
-                <img src="images/location.svg" alt="" />
-                <span>Safari, Malete</span>
-              </div>
-              <a href="hostel" class="btn">View more</a>
-            </div>
-          </div>
-
-          <div class="hostel">
-            <img src="images/hostel.jpg" alt="image here" id="apartment" />
-            <div class="hostel-details">
-              <div class="hostel-name">
-                <h4>Lambo Phase 1</h4>
-                <span>150k/year</span>
-              </div>
-              <span>A room self-contain</span>
-              <div class="hostel-location">
-                <img src="images/location.svg" alt="" />
-                <span>Safari, Malete</span>
-              </div>
-              <a href="hostel" class="btn">View more</a>
-            </div>
-          </div>
-
-          <div class="hostel">
-            <img src="images/hostel.jpg" alt="image here" id="apartment" />
-            <div class="hostel-details">
-              <div class="hostel-name">
-                <h4>Lambo Phase 1</h4>
-                <span>150k/year</span>
-              </div>
-              <span>A room self-contain</span>
-              <div class="hostel-location">
-                <img src="images/location.svg" alt="" />
-                <span>Safari, Malete</span>
-              </div>
-              <a href="hostel" class="btn">View more</a>
-            </div>
-          </div>
+          <% } %>
         </div>
         <div id="more-hostels">
           <span><a href="explore">View more</a></span>

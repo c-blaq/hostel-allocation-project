@@ -4,33 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/shared.css" />
-    <link rel="stylesheet" href="css/responsivesness.css" />
+    <link rel="stylesheet" href="/css/shared.css" />
+    <link rel="stylesheet" href="/css/responsivesness.css" />
     <title>Homely&ndash;hostel</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="images/logo.png" alt="" />
+          <img src="/images/logo.png" alt="" />
         </div>
-        <nav class="header-nav">
-          <a href="index">home</a>
-          <a href="about">about</a>
-          <a href="explore">explore</a>
-          <a href="contact">contact</a>
-          <a href="sign-in" class="btn">sign in</a>
-        </nav>
+        <%- include("partials/nav.ejs") -%>
 
         <div id="dropdown">
           <button id="dropdown-btn">
             <img
-              src="images/icon-hamburger.svg"
+              src="/images/icon-hamburger.svg"
               id="open-dropdown"
               class="visible"
             />
             <img
-              src="images/icon-close.svg"
+              src="/images/icon-close.svg"
               alt=""
               id="close-dropdown"
             />
@@ -40,52 +34,42 @@
       </div>
     </header>
     <main>
+
         <section class="container apartment">
-          <div class="backdrop">
-            <div class="dropdown-menu">
-              <nav class="header-nav">
-                <a href="index">home</a>
-                <a href="about">about</a>
-                <a href="explore">explore</a>
-                <a href="contact">contact</a>
-                <a href="sign-in" class="btn">sign in</a>
-              </nav>
-            </div>
           </div>
             <div class="apartment-view">
                 <div class="current-view">
-                    <img src="images/bedroom.jpg" alt="">
+                    <img src="/images/bedroom.jpg" alt="">
                 </div>
                 <div class="sub-view">
-                    <img src="images/hostel.jpg" alt="" >
-                    <img src="images/hostel.jpg" alt="" >
-                    <img src="images/hostel.jpg" alt="" >
-                    <img src="images/hostel.jpg" alt="" >
+                    <img src="/images/hostel.jpg" alt="" >
+                    <img src="/images/hostel.jpg" alt="" >
+                    <img src="/images/hostel.jpg" alt="" >
+                    <img src="/images/hostel.jpg" alt="" >
                 </div>
             </div>
             <div class="apartment-details">
-                <h1>Lambo Phase 1</h1>
-                <div class="detail">
-                    <img src="images/fill-location.svg" alt="">
-                    <strong>Safari, Malete</strong>
-                </div>
-                <div class="detail">
-                    <img src="images/home.svg" alt="">
-                    <strong>1 bedroom</strong>
-                </div>
-                <div class="detail">
-                    <img src="images/home.svg" alt="">
-                    <strong>1 kitchen</strong>
-                </div>
-                <div class="detail">
-                    <img src="images/home.svg" alt="">
-                    <strong>1 restroom</strong>
-                </div>
-
-
-
-                <strong>Number of rooms: 10</strong>
-                <strong>Available rooms: 10</strong>
+                <% if(hostels) { %>
+                <h1><%- hostels.hostelName %></h1>
+                    <div class="detail">
+                        <img src="/images/fill-location.svg" alt="">
+                        <strong><%-hostels.location %> </strong>
+                    </div>
+                    <div class="detail">
+                        <img src="/images/home.svg" alt="">
+                        <strong><%-hostels.numberOfBedroom %> bedroom</strong>
+                    </div>
+                    <div class="detail">
+                        <img src="/images/home.svg" alt="">
+                        <strong><%-hostels.numberOfKitchen %> kitchen</strong>
+                    </div>
+                    <div class="detail">
+                        <img src="/images/home.svg" alt="">
+                        <strong><%- hostels.numberOfToilet %> restroom</strong>
+                    </div>
+                    <strong>Number of rooms: <%- hostels.numberOfRooms %></strong>
+                    <strong>Available rooms: <%- hostels.availableRooms %></strong>
+                 <% } %>
                 <div class="apartment-btn">
                     <a href="" class="btn">Rent hostel</a>
                     <a href="#" class="btn"> Contact agent</a>
@@ -108,23 +92,23 @@
             <div>
                 <h1>Why you'll love it here</h1>
                 <div class="advantage">
-                    <img src="images/verified.svg" alt="">
+                    <img src="/images/verified.svg" alt="">
                     <p>Conducive environment</p>
                 </div>
 
                 <div class="advantage">
-                    <img src="images/verified.svg" alt="">
+                    <img src="/images/verified.svg" alt="">
                     <p>Availability of power supply </p>
                 </div>
 
                 <div class="advantage">
-                    <img src="images/verified.svg" alt="">
+                    <img src="/images/verified.svg" alt="">
                     <p>Excellent internet service</p>
                 </div>
 
                 <div class="apartment-btn">
                     <a href="" class="btn">Rent hostel</a>
-                    <a href="" class="btn"> Contact agent</a>
+                    <a href="tel:09059921680" class="btn"> Contact agent</a>
                 </div>
             </div>
         </section>
@@ -163,17 +147,17 @@
         <div class="socials">
           <span>Follow us: </span>
           <span>
-            <img src="images/facebook-icon.png" alt="facebook-icon" />
-            <img src="images/twitter-icon.png" alt="facebook-icon" />
+            <img src="/images/facebook-icon.png" alt="facebook-icon" />
+            <img src="/images/twitter-icon.png" alt="facebook-icon" />
             <img
-              src="images/instagram-icon.png"
+              src="/images/instagram-icon.png"
               alt="facebook-icon"
             />
-            <img src="images/linkedin-icon.png" alt="facebook-icon" />
+            <img src="/images/linkedin-icon.png" alt="facebook-icon" />
           </span>
         </div>
       </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

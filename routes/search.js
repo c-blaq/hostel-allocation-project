@@ -3,14 +3,15 @@ const { Hostel } = require("../model/hostel");
 const express = require("express");
 const router = express.Router();
 
-router.get("/hostels/:location", (req, res) => {
-  if (req.params.location) {
+router.get("/hostels/", (req, res) => {
+  let { search } = req.query;
+  search = (search || "").trim();
+
+  if (search) {
     let result = hostels
       .filter(
         (hostel) =>
-          hostel.location
-            .toLowerCase()
-            .indexOf(req.params.location.toLowerCase()) !== -1
+          hostel.location.toLowerCase().indexOf(search.toLowerCase()) !== -1
       )
       .map((hostel) => hostel);
     res.send(result);

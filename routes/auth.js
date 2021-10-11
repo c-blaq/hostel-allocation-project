@@ -1,5 +1,7 @@
 const bcrypt = require("bcrypt");
 const { User, validateUser, validateLogin } = require("../model/user");
+const { Hostel } = require("../model/hostel");
+
 const express = require("express");
 const auth = require("../middleware/auth");
 const redirect = require("../middleware/redirect");
@@ -7,9 +9,9 @@ const router = express.Router();
 
 // HOME
 router.get("/", async (req, res) => {
-  let users = await User.find().sort({ name: 1 });
+  hostels = await Hostel.find().sort({ name: 1 });
 
-  res.render("index", { users });
+  res.render("index", { hostels });
   // res.render("index");
 });
 router.get("/index", async (req, res) => {
@@ -24,14 +26,23 @@ router.get("/about", (req, res) => {
 });
 
 // EXPLORE
-router.get("/explore", (req, res) => {
-  res.render("explore");
+router.get("/explore", async (req, res) => {
+  let hostels = await Hostel.find().sort({ name: 1 });
+
+  res.render("explore", { hostels });
 });
 
 // HOSTEL VIEW
-router.get("/hostel", (req, res) => {
-  res.render("hostel");
+router.get("/hostel/:id", async (req, res) => {
+  let hostels = await Hostel.findById(req.params.id);
+
+  res.render("hostel", { hostels });
 });
+// router.get("/hostel", async (req, res) => {
+//   let hostels = await Hostel.find().sort({ name: 1 });
+
+//   res.render("hostel", { hostels });
+// });
 
 // CONTACT
 router.get("/contact", (req, res) => {

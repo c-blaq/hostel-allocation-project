@@ -166,10 +166,12 @@ footer h1 {
 .search-input-container {
   position: relative;
 }
-.search-input-container img {
+.search-input-container button {
   position: absolute;
   top: 25%;
   right: 2%;
+  background: none;
+  border: none;
   /* display: inline-block; */
   /* margin: auto; */
 }
@@ -215,6 +217,7 @@ footer h1 {
 }
 #explore-section {
   margin-bottom: 5rem;
+  /* align-items: stretch; */
 }
 
 .hostel {
@@ -228,7 +231,7 @@ footer h1 {
   width: 100%;
 }
 .hostel h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .hostel span {
   font-size: 1rem;
@@ -369,8 +372,9 @@ main #aboutUs-content {
   margin: 0 auto;
   margin-bottom: 5rem;
   position: relative;
-  top: -10%;
+  top: -15%;
 }
+
 .form-wrapper form {
   background: #fff;
   padding: 2rem 4rem;
@@ -388,7 +392,7 @@ textarea {
   margin-bottom: 1.2rem;
 }
 
-.form-wrapper input[type="button"] {
+.form-wrapper input[type="submit"] {
   width: 30%;
   cursor: pointer;
 }

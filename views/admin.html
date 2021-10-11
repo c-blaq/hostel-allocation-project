@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/responsivesness.css" />
-    <title>Homely&ndash;contact us</title>
+    <title>Homely&ndash;admin</title>
   </head>
   <body>
     <header>
@@ -34,23 +34,29 @@
       </div>
     </header>
     <main>
-      <div class="background" id="contact">
+      <div class="background" id="about">
         <div class="backdrop">
           <div class="dropdown-menu">
             <%- include("partials/nav.ejs") -%>
           </div>
         </div>
-      </div>
-      <div class="form-wrapper">
-        <form action="">
-          <input type="text" placeholder="Full name" />
-          <input type="email" placeholder="Email" />
-          <textarea name="" id="" cols="30" rows="10">Message</textarea>
-          <input type="button" value="Send message" class="btn" />
+       </div>
+
+       <div class=" form-wrapper">
+        <form action="/admin" method="POST">
+          <input type="text" placeholder="Hostel name" name="hostelName"/>
+          <input type="text" placeholder="Location" name="location"/>
+          <input type="text" placeholder="Price" name="price"/>
+          <input type="text" placeholder="Description" name="description"/>
+          <input type="number" placeholder="Number of bedroom" name="numberOfBedroom"/>
+          <input type="number" placeholder="Number of kitchen" name="numberOfKitchen"/>
+          <input type="number" placeholder="Number of toilet" name="numberOfToilet"/>
+          <input type="number" placeholder="Number of rooms" name="numberOfRooms"/>
+          <input type="number" placeholder="Available rooms" name="availableRooms"/>
+          <input type="submit" value="Upload" class="btn" />
         </form>
       </div>
     </main>
-
     <footer>
       <div class="container">
         <div class="footer-logo">

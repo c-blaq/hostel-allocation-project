@@ -1,23 +1,23 @@
-const Hostel = require("../model/hostel");
-// const hostels = require("../hostels.json");
+const { Hostel } = require("../model/hostel");
+
 const express = require("express");
 const router = express.Router();
 
-router.get("/explore", (req, res) => {
-  res.render("explore");
-});
+router.get("/hostels/", async (req, res) => {
+  let { q: search } = req.query;
+  search = (search || "").trim();
 
-router.get("/hostels/:location", (req, res) => {
-  if (req.params.location) {
-    let result = hostels
+  let hostels = await Hostel.find().sort({ name: 1 });
+  if (search) {
+    let hostel = hostels
       .filter(
         (hostel) =>
-          hostel.location
-            .toLowerCase()
-            .indexOf(req.params.location.toLowerCase()) !== -1
+          hostel.location.toLowerCase().indexOf(search.toLowerCase()) !== -1
       )
       .map((hostel) => hostel);
-    res.send(result);
+    //   res.render("explore", { hostel });
+    // } else {
+    //   res.redirect("/");
   }
 });
 

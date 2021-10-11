@@ -43,11 +43,9 @@ function validateUser(user) {
     password: Joi.string().min(6).max(255).required(),
   });
 
-  const { error } = schema.validate(user, {
+  return schema.validate(user, {
     abortEarly: false,
   });
-  console.log(error.details);
-  return schema.validate(user);
 }
 
 function validateLogin(user) {

@@ -14,13 +14,7 @@
         <div class="logo">
           <img src="images/logo.png" alt="" />
         </div>
-        <nav class="header-nav">
-          <a href="index">home</a>
-          <a href="about">about</a>
-          <a href="explore">explore</a>
-          <a href="contact">contact</a>
-          <a href="sign-in" class="btn">sign in</a>
-        </nav>
+        <%- include("partials/nav.ejs") -%>
 
         <div id="dropdown">
           <button id="dropdown-btn">
@@ -43,13 +37,7 @@
       <div class="background" id="about">
         <div class="backdrop">
           <div class="dropdown-menu">
-            <nav class="header-nav">
-              <a href="index">home</a>
-              <a href="about">about</a>
-              <a href="explore">explore</a>
-              <a href="contact">contact</a>
-              <a href="sign-in" class="btn">sign in</a>
-            </nav>
+            <%- include("partials/nav.ejs") -%>
           </div>
         </div>
       </div>

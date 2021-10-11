@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const path = require("path");
 const session = require("express-session");
 const userAuth = require("./routes/auth");
@@ -14,6 +16,9 @@ app.set("view engine", "html");
 app.set(path.join(__dirname, "public"), "views");
 
 app.use(express.static("public"));
+// app.use("/css", express.static("public/css"));
+// app.use("/images", express.static("public/images"));
+// app.use(express.static(path.resolve(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 // app.use(idAuth);
 // useSession(app, 60 * 30 * 1000);
@@ -37,8 +42,8 @@ app.use("/", dashboard);
 app.use("/", getHostel);
 
 mongoose
-  .connect("mongodb://localhost:27017/hostel")
-  .then(() => console.log("Connected to mongodb"))
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("connected to mongodb"))
   .catch((err) => console.error("could not connect to mongodb", err));
 
 app.listen(process.env.PORT || 5512);
