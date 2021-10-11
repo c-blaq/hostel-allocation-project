@@ -97,7 +97,7 @@
         <h2>Explore hostels</h2>
 
         <div class="container" id="explore-hostels">
-          <% for( let i = 0; i < 4; i++) { %>
+          <% if (hostels) { %> <% for( let i = 0; i < hostels.length; i++) { %>
           <div class="hostel">
             <img src="images/hostel.jpg" alt="image here" id="apartment" />
             <div class="hostel-details">
@@ -115,7 +115,7 @@
               >
             </div>
           </div>
-          <% } %>
+          <% } %> <% } %>
         </div>
         <div id="more-hostels">
           <span><a href="explore">View more</a></span>
