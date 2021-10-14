@@ -9,15 +9,10 @@ const router = express.Router();
 
 // HOME
 router.get("/", async (req, res) => {
-  hostels = await Hostel.find().sort({ name: 1 });
+  hostels = await Hostel.find().sort({ name: 1 }).limit(4);
 
   res.render("index", { hostels });
   // res.render("index");
-});
-router.get("/index", async (req, res) => {
-  let users = await User.find().sort({ name: 1 });
-
-  res.render("index", { users });
 });
 
 // ABOUT

@@ -3,7 +3,6 @@ require("dotenv").config();
 const path = require("path");
 const session = require("express-session");
 const userAuth = require("./routes/auth");
-const dashboard = require("./routes/dashboard");
 const getHostel = require("./routes/hostel");
 const admin = require("./routes/admin");
 const mongoose = require("mongoose");
@@ -36,9 +35,8 @@ app.use(
 
 app.use(flashmessage);
 // app.use(sessionAuth);
-app.use("/", admin);
+app.use("/admin", admin);
 app.use("/", userAuth);
-app.use("/", dashboard);
 app.use("/", getHostel);
 
 mongoose

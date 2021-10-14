@@ -97,22 +97,20 @@
         <h2>Explore hostels</h2>
 
         <div class="container" id="explore-hostels">
-          <% if (hostels) { %> <% for( let i = 0; i < 4; i++) { %>
+          <% if (hostels) { %> <% for( hostel of hostels) { %>
           <div class="hostel">
             <img src="images/hostel.jpg" alt="image here" id="apartment" />
             <div class="hostel-details">
               <div class="hostel-name">
-                <h4><%- hostels[i].hostelName %></h4>
-                <span><%- hostels[i].price %>k/year</span>
+                <h4><%- hostel.hostelName %></h4>
+                <span><%- hostel.price %>k/year</span>
               </div>
-              <span><%- hostels[i].description %></span>
+              <span><%- hostel.description %></span>
               <div class="hostel-location">
                 <img src="images/location.svg" alt="" />
-                <span><%- hostels[i].location %></span>
+                <span><%- hostel.location %></span>
               </div>
-              <a href="<%- `hostel/${hostels[i]._id}` %>" class="btn"
-                >View more</a
-              >
+              <a href="<%- `hostel/${hostel._id}` %>" class="btn">View more</a>
             </div>
           </div>
           <% } %> <% } %>
