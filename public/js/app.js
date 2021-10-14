@@ -18,10 +18,21 @@
     }
   });
 
+  const btnRent = document.querySelector(".btnRent");
+  const payment = document.querySelector(".bb");
+  const input = document.querySelector(".payment");
+
+  btnRent.addEventListener("click", () => {
+    payment.classList.add("visible");
+    input.classList.add("visible");
+    console.log("clicked..");
+  });
+
   const btnSignIn = document.querySelector("#sign-in-btn");
   const btnSignUp = document.querySelector("#sign-up-btn");
   const signIn = document.querySelector(".sign-in");
   const signUp = document.querySelector(".sign-up");
+
   btnSignUp.addEventListener("click", () => {
     signIn.classList.add("sign-in-hidden");
     signUp.classList.add("sign-up-show");

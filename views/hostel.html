@@ -71,9 +71,19 @@
                     <strong>Available rooms: <%- hostels.availableRooms %></strong>
                  <% } %>
                 <div class="apartment-btn">
-                    <a href="" class="btn">Rent hostel</a>
-                    <a href="#" class="btn"> Contact agent</a>
+                    <a href="#" class="btn btnRent">Rent hostel</a>
+                    <a href="#" class="btn contact-agent"> Contact agent</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="bb">
+            <div class="payment">
+              <input type="text" placeholder="Name on card">
+              <input type="number" placeholder="Card number">
+              <input type="month"  onfocus="(this.type='Expiration date')">
+              <input type="number" placeholder="CVC">
+              <input type="submit" value="pay" class="btn">
             </div>
         </section>
 
@@ -107,7 +117,7 @@
                 </div>
 
                 <div class="apartment-btn">
-                    <a href="" class="btn">Rent hostel</a>
+                    <a href="#" class="btn btnRent" >Rent hostel</a>
                     <a href="tel:09059921680" class="btn"> Contact agent</a>
                 </div>
             </div>
