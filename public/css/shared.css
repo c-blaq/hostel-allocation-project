@@ -27,8 +27,9 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-.logo img {
-  height: 75px;
+.logo {
+  /* height: 75px; */
+  padding: 1rem 0;
 }
 .header-nav a {
   margin-left: 1.4rem;
@@ -148,6 +149,10 @@ footer h1 {
 }
 
 /* INDEX OR HOME PAGE */
+#intro {
+  background: url("/images/bg-testimonial.png") center center;
+  background-size: cover;
+}
 .intro {
   gap: 1.875rem;
 }
@@ -299,13 +304,16 @@ footer h1 {
   gap: 28px;
   margin-bottom: 7rem;
 }
+
 #testimonies-wrapper span {
   display: block;
 }
 .testimonies {
   flex: 1;
   height: 450px;
-  background: #c4c4c4;
+  background: url("/images/bg-testimonial.png") center center;
+  background-position: center;
+  background-size: cover;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -420,10 +428,11 @@ textarea {
 }
 
 .sign-up {
-  display: none;
+  opacity: 0;
 }
 .sign-up-show {
-  display: block;
+  opacity: 1;
+  transition: all ease-in-out 1s;
 }
 
 /*HOSTEL VIEW PAGE */

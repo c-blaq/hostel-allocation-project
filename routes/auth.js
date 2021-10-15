@@ -33,11 +33,6 @@ router.get("/hostel/:id", async (req, res) => {
 
   res.render("hostel", { hostels });
 });
-// router.get("/hostel", async (req, res) => {
-//   let hostels = await Hostel.find().sort({ name: 1 });
-
-//   res.render("hostel", { hostels });
-// });
 
 // CONTACT
 router.get("/contact", (req, res) => {
