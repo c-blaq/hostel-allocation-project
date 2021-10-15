@@ -35,7 +35,7 @@ app.use(
 
 app.use(flashmessage);
 // app.use(sessionAuth);
-app.use("/admin", admin);
+app.use("/", admin);
 app.use("/", userAuth);
 app.use("/", getHostel);
 
