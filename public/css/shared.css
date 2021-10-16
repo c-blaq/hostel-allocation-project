@@ -36,11 +36,14 @@ header .container {
   color: #121212;
   text-transform: capitalize;
   font-size: 1.125rem;
+  transition: all ease-in-out 0.5s;
 }
 
 .header-nav a:hover {
-  color: #240046;
-  font-weight: bold;
+  color: #5c189b;
+  display: inline-block;
+  transform: scale(1.06);
+  transition: all ease-in-out 0.5s;
 }
 .btn {
   background: #240046;
@@ -48,6 +51,12 @@ header .container {
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   display: inline-block;
+  transition: all ease-out 0.7s;
+}
+
+.btn:hover {
+  background-color: #5c189b;
+  transition: background-color ease-in-out 0.5s;
 }
 
 .header-nav {
@@ -231,7 +240,16 @@ footer h1 {
   border-radius: 8px;
   /* max-width: 500px; */
   box-shadow: 0px 4px 5px 0px #ccc;
+  transition: all 0.5s ease-out;
 }
+.hostel a {
+  color: black;
+}
+.hostel:hover {
+  transform: scale(1.08);
+  transition: transform 0.5s ease-in-out;
+}
+
 .hostel #apartment {
   width: 100%;
 }

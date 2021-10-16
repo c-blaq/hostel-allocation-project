@@ -97,21 +97,23 @@
 
         <div class="container" id="explore-hostels">
           <% if (hostels) { %> <% for( hostel of hostels) { %>
-          <div class="hostel">
-            <img src="images/hostel.jpg" alt="image here" id="apartment" />
-            <div class="hostel-details">
-              <div class="hostel-name">
-                <h4><%- hostel.hostelName %></h4>
-                <span><%- hostel.price %>k/year</span>
+          <a href="<%- `hostel/${hostel._id}` %>">
+            <div class="hostel">
+              <img src="images/hostel.jpg" alt="image here" id="apartment" />
+              <div class="hostel-details">
+                <div class="hostel-name">
+                  <h4><%- hostel.hostelName %></h4>
+                  <span><%- hostel.price %>k/year</span>
+                </div>
+                <span><%- hostel.description %></span>
+                <div class="hostel-location">
+                  <img src="images/location.svg" alt="" />
+                  <span><%- hostel.location %></span>
+                </div>
+                <a href="<%-`hostel/${hostel._id}`%>" class="btn">View more</a>
               </div>
-              <span><%- hostel.description %></span>
-              <div class="hostel-location">
-                <img src="images/location.svg" alt="" />
-                <span><%- hostel.location %></span>
-              </div>
-              <a href="<%- `hostel/${hostel._id}` %>" class="btn">View more</a>
             </div>
-          </div>
+          </a>
           <% } %> <% } %>
         </div>
         <div id="more-hostels">
