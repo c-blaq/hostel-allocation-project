@@ -41,25 +41,35 @@
             <%- include("partials/nav.ejs") -%>
           </div>
         </div>
-      </div>
-      <div class="form-wrapper" id="sign-in">
-        <div id="option">
-          <button id="sign-in-btn">Sign in</button>
-          <button id="sign-up-btn">Sign up</button>
+
+        <div class="form-wrapper" id="sign-in">
+          <form action="/sign-in" method="POST" class="sign-in">
+            <h1>Sign in</h1>
+            <input type="email" placeholder="Email" name="email"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <div id="forgotPw">
+              <span>Forgot password?</span>
+              <span>
+                <input type="checkbox">
+                <label for="checkbox">Remember me</label>
+              </span>
+            </div>
+            <input type="submit" value="Sign in" class="btn" />
+            <p>Dont have an account?<a href="" id="sign-up-btn">Sign up for free</a></p>
+          </form>
+          
+          <form action="/sign-up" method="POST" class="sign-up">
+            <h1>Sign up</h1>
+            <input type="text" placeholder="Full name" name="name"/>
+            <input type="email" placeholder="Email" name="email" />
+            <input type="tel" placeholder="Phone number" name="phone"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <input type="submit" value="Sign up" class="btn" />
+            <p>Already have an account?<a href="" id="sign-in-btn">Sign in</a></p>
+          </form>
         </div>
-        <form action="/sign-in" method="POST" class="sign-in">
-          <input type="email" placeholder="Email" name="email"/>
-          <input type="password" placeholder="Password" name="password"/>
-          <input type="submit" value="Sign in" class="btn" />
-        </form>
-        <form action="/sign-up" method="POST" class="sign-up">
-          <input type="text" placeholder="Full name" name="name"/>
-          <input type="email" placeholder="Email" name="email" />
-          <input type="tel" placeholder="Phone number" name="phone"/>
-          <input type="password" placeholder="Password" name="password"/>
-          <input type="submit" value="Sign up" class="btn" />
-        </form>
       </div>
+
     </main>
 
     <footer>

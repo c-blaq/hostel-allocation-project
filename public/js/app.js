@@ -23,14 +23,17 @@
   const signIn = document.querySelector(".sign-in");
   const signUp = document.querySelector(".sign-up");
 
-  btnSignUp.addEventListener("click", () => {
+  btnSignUp.addEventListener("click", (e) => {
     signIn.classList.add("sign-in-hidden");
     signUp.classList.add("sign-up-show");
     console.log("clicked..");
+
+    e.preventDefault();
   });
 
-  btnSignIn.addEventListener("click", () => {
+  btnSignIn.addEventListener("click", (e) => {
     signIn.classList.remove("sign-in-hidden");
     signUp.classList.remove("sign-up-show");
+    e.preventDefault();
   });
 })();
