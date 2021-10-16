@@ -400,7 +400,7 @@ main #aboutUs-content {
 
 .form-wrapper {
   width: 50%;
-  margin: auto;
+  margin: 2rem auto;
   max-width: 700px;
   /* margin-bottom: 5rem; */
   position: relative;
@@ -450,6 +450,9 @@ form h1 {
 form p {
   text-align: left;
   font-size: 1rem;
+}
+form #policy {
+  text-align: left;
 }
 .sign-in #forgotPw {
   display: flex;
