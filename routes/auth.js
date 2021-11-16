@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
       subject: `Email Verification`,
       template: "email",
       "h:X-Mailgun-Variables": JSON.stringify({
-        // be sure to stringify your payload
+        // be sure to surely stringify your payload
         title: "email verify",
       }),
       "h:Reply-To": "bbayejuadesina@gmail.com",
