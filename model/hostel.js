@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
+const slug = require("mongoose-slug-generator");
 const Joi = require("joi");
+
+mongoose.plugin(slug);
 
 const hostelSchema = new mongoose.Schema({
   hostelName: {
@@ -56,6 +59,7 @@ const hostelSchema = new mongoose.Schema({
     max: 255,
     required: true,
   },
+  slug: { type: String, slug: ["hostelName", "location"], unique: true },
   dateOut: { type: Date, default: Date.now() },
 });
 

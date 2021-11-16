@@ -17,7 +17,11 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "joi": "^17.4.2",
+    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^3.7.3",
     "mongoose": "^6.0.2",
+    "mongoose-slug-generator": "^1.0.4",
+    "nodemailer": "^6.7.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
