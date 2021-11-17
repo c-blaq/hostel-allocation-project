@@ -2,8 +2,12 @@ require("dotenv").config();
 
 const path = require("path");
 const session = require("express-session");
+const home = require("./routes/home");
+const about = require("./routes/about");
+const explore = require("./routes/explore");
+const contact = require("./routes/contact");
 const userAuth = require("./routes/auth");
-const getHostel = require("./routes/hostel");
+const search = require("./routes/search");
 const admin = require("./routes/admin");
 const mongoose = require("mongoose");
 const express = require("express");
@@ -35,9 +39,13 @@ app.use(
 
 app.use(flashmessage);
 // app.use(sessionAuth);
-app.use("/", admin);
+app.use("/", home);
+app.use("/about", about);
+app.use("/contact", contact);
+app.use("/explore", explore);
+app.use("/admin", admin);
 app.use("/", userAuth);
-app.use("/", getHostel);
+app.use("/", search);
 
 mongoose
   .connect(process.env.MONGODB_URI)

@@ -3,11 +3,11 @@ const { Hostel, validateHostel } = require("../model/hostel");
 const express = require("express");
 const router = express.Router();
 
-router.get("/admin", adminAuth, (req, res) => {
+router.get("/", adminAuth, (req, res) => {
   res.render("admin");
 });
 
-router.post("/admin", async (req, res) => {
+router.post("/", async (req, res) => {
   const { error } = validateHostel(req.body);
   if (error) return res.send(error.details[0].message);
 
