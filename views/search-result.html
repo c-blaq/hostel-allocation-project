@@ -14,6 +14,7 @@
         <div class="logo">
           <img src="images/logo.png" alt="" height="50px" />
         </div>
+
         <%- include("partials/nav.ejs") -%>
 
         <div id="dropdown">
@@ -66,27 +67,30 @@
 
       <section id="explore-section">
         <div class="container explore" id="explore-hostels">
-          <% for(hostel of hostels) { %>
+          <% if (hostel) { %> <% for( result of hostel) { %>
+          <a href="<%- `hostel/${hostel._id}` %>">
             <div class="hostel">
               <img src="images/hostel.jpg" alt="image here" id="apartment" />
               <div class="hostel-details">
                 <div class="hostel-name">
-                  <h4><%- hostel.hostelName %></h4>
-                  <span><%- hostel.price %>k/year</span>
+                  <h4><%- result.hostelName %></h4>
+                  <span><%- result.price %>k/year</span>
                 </div>
-                <span><%- hostel.description %></span>
+                <span><%- result.description %></span>
                 <div class="hostel-location">
                   <img src="images/location.svg" alt="" />
-                  <span><%- hostel.location %></span>
+                  <span><%- result.location %></span>
                 </div>
-                <a href="<%- `explore/hostel/${hostel.slug}` %>" class="btn">View more</a>
+                <a href="<%-`explore/hostel/${hostel.slug}`%>" class="btn"
+                  >View more</a
+                >
               </div>
             </div>
-            <% } %>
-            </div>
-          </div>
+          </a>
+          <% } %> <% } %>
         </div>
       </section>
+
     </main>
 
     <footer>
