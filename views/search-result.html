@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/shared.css" />
-    <link rel="stylesheet" href="css/responsivesness.css" />
+    <link rel="stylesheet" href="/css/shared.css" />
+    <link rel="stylesheet" href="/css/responsivesness.css" />
     <title>Homely&ndash;explore</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="images/logo.png" alt="" height="50px" />
+          <img src="/images/logo.png" alt="" height="50px" />
         </div>
 
         <%- include("partials/nav.ejs") -%>
@@ -20,12 +20,12 @@
         <div id="dropdown">
           <button id="dropdown-btn">
             <img
-              src="images/icon-hamburger.svg"
+              src="/images/icon-hamburger.svg"
               id="open-dropdown"
               class="visible"
             />
             <img
-              src="images/icon-close.svg"
+              src="/images/icon-close.svg"
               alt=""
               id="close-dropdown"
             />
@@ -54,7 +54,7 @@
         <form action="/hostels/" method="get">
           <div class="search-input-container">
             <button>
-              <img src="images/search.png" alt="" />
+              <img src="/images/search.png" alt="" />
             </button>
             <input
               type="text"
@@ -67,27 +67,27 @@
 
       <section id="explore-section">
         <div class="container explore" id="explore-hostels">
-          <% if (hostel) { %> <% for( result of hostel) { %>
-          <a href="<%- `hostel/${hostel._id}` %>">
-            <div class="hostel">
-              <img src="images/hostel.jpg" alt="image here" id="apartment" />
-              <div class="hostel-details">
-                <div class="hostel-name">
-                  <h4><%- result.hostelName %></h4>
-                  <span><%- result.price %>k/year</span>
+          <% if(result) {%>
+
+            <% for(hostel of result) { %>
+              <div class="hostel">
+                <img src="/images/hostel.jpg" alt="image here" id="apartment" />
+                <div class="hostel-details">
+                  <div class="hostel-name">
+                    <h4><%- hostel.hostelName %></h4>
+                    <span><%- hostel.price %>k/year</span>
+                  </div>
+                  <span><%- hostel.description %></span>
+                  <div class="hostel-location">
+                    <img src="/images/location.svg" alt="" />
+                    <span><%- hostel.location %></span>
+                  </div>
+                  <a href="<%- `explore/hostel/${hostel.slug}` %>" class="btn">View more</a>
                 </div>
-                <span><%- result.description %></span>
-                <div class="hostel-location">
-                  <img src="images/location.svg" alt="" />
-                  <span><%- result.location %></span>
-                </div>
-                <a href="<%-`explore/hostel/${hostel.slug}`%>" class="btn"
-                  >View more</a
-                >
               </div>
-            </div>
-          </a>
-          <% } %> <% } %>
+            <% } %>
+          <% }%>
+
         </div>
       </section>
 
@@ -127,17 +127,17 @@
         <div class="socials">
           <span>Follow us: </span>
           <span>
-            <img src="images/facebook-icon.png" alt="facebook-icon" />
-            <img src="images/twitter-icon.png" alt="facebook-icon" />
+            <img src="/images/facebook-icon.png" alt="facebook-icon" />
+            <img src="/images/twitter-icon.png" alt="facebook-icon" />
             <img
-              src="images/instagram-icon.png"
+              src="/images/instagram-icon.png"
               alt="facebook-icon"
             />
-            <img src="images/linkedin-icon.png" alt="facebook-icon" />
+            <img src="/images/linkedin-icon.png" alt="facebook-icon" />
           </span>
         </div>
       </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>
