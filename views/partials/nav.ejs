@@ -3,5 +3,9 @@
   <a href="/about">about</a>
   <a href="/explore">explore</a>
   <a href="/contact">contact</a>
+  <% if(user) { %>
+  <a href="/logout" class="btn">logout</a>
+  <% } else { %>
   <a href="/sign-in" class="btn">sign in</a>
+  <%} %>
 </nav>
